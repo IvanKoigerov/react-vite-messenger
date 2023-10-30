@@ -1,25 +1,36 @@
 # React_Vite_Messenger
+
 ## Монорепа
+
 - turbo
 
 ## Backend
+
 - nest
-- websocket 
+- websocket
 - jest
 
 ## Frontend
-- react 
-- react router 
-- storyBook 
+
+- react
+- react router
+- storyBook
 - redux
 
 ## UI Components
+
 - radix-ui
 
 ## Frontend Tooling
+
 - vite
 
 ## Testing
-- React Testing Library 
-- Скриншотные тесты 
+
+- React Testing Library
+- Скриншотные тесты
 - e2e
+
+## Запуск приложения
+
+@TODO

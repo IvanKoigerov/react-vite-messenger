@@ -14,13 +14,11 @@
     "allowSyntheticDefaultImports": true,
     "allowJs": true,
     "esModuleInterop": true,
-    /* Bundler mode */
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "preserve",
-    /* Linting */
     "strict": true,
     "noUnusedLocals": false,
     "noUnusedParameters": true,
@@ -29,7 +27,10 @@
       "~/*": [
         "./*"
       ]
-    }
+    },
+    "types": [
+      "vite-plugin-svgr/client",
+    ]
   },
   "include": [
     "src",

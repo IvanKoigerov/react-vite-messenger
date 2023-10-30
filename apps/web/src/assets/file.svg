@@ -1,0 +1,16 @@
+<svg width="40" height="40" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path fill-rule="evenodd" clip-rule="evenodd"
+        d="M15 10a2.5 2.5 0 0 0-2.5 2.5v15A2.5 2.5 0 0 0 15 30h10a2.5 2.5 0 0 0 2.5-2.5V14.706a1.25 1.25 0 0 0-.392-.91l-3.659-3.455a1.25 1.25 0 0 0-.858-.341H15z"
+        fill="#fff" fill-opacity=".24"/>
+  <path fill-rule="evenodd" clip-rule="evenodd"
+        d="m26.301 14.217-3.018-3.018a1.25 1.25 0 0 0-.883-.366h-.316v3.333c0 .69.56 1.25 1.25 1.25h3.333v-.315c0-.332-.131-.65-.366-.884z"
+        fill="#fff" fill-opacity=".24"/>
+  <path transform="translate(12.5 15.418)" fill="url(#a)" d="M0 0h15v14.583H0z"/>
+  <defs>
+    <pattern id="a" patternContentUnits="objectBoundingBox" width="1" height="1">
+      <use xlink:href="#b" transform="matrix(1 0 0 1.02857 0 -.014)"/>
+    </pattern>
+    <image id="b" width="1" height="1"
+           xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAQSURBVHgBAQUA+v8AAAAAAAAFAAFkeJU4AAAAAElFTkSuQmCC"/>
+  </defs>
+</svg>
