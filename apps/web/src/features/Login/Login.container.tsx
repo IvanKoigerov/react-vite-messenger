@@ -2,7 +2,7 @@ import { Button, Center, Stack, TextInput } from '@mantine/core';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import APP_ROUTES from '~/src/const/routes.ts';
+import { APP_ROUTES } from '~/app/providers/AppRouters/routes.const.ts';
 
 const LoginContainer = () => {
   const navigate = useNavigate();

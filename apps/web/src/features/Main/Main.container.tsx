@@ -2,8 +2,8 @@ import styled from '@emotion/styled';
 import { Box, Flex } from '@mantine/core';
 import React from 'react';
 
-import MessageText from '~/src/components/MessageText.tsx';
-import MessageInputContainer from '~/src/entities/Main/components/MessageInputContainer.tsx';
+import MessageInputContainer from '~/features/Main/ui/MessageInputContainer.tsx';
+import MessageText from '~/shared/ui/MessageText.tsx';
 
 const mockData = [
   {

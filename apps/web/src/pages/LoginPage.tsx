@@ -1,4 +1,4 @@
-import LoginContainer from '~/src/entities/Login';
+import LoginContainer from '~/features/Login';
 
 const LoginPage = () => {
   return <LoginContainer />;

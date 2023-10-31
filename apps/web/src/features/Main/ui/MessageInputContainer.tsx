@@ -5,9 +5,9 @@ import { useState } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 import { object, string } from 'yup';
 
-import AddFile from '~/src/assets/addFile.svg?react';
-import Send from '~/src/assets/send.svg?react';
-import MessageInput from '~/src/components/MessageInput.tsx';
+import AddFile from '~/app/assets/addFile.svg?react';
+import Send from '~/app/assets/send.svg?react';
+import MessageInput from '~/shared/ui/MessageInput.tsx';
 
 const schema = object().shape({
   message: string().trim(),

@@ -1,13 +1,13 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-import DefaultLayout from '~/src/components/DefaultLayout.tsx';
-import APP_ROUTES from '~/src/const/routes.ts';
-import LoginPage from '~/src/pages/LoginPage.tsx';
-import MainPage from '~/src/pages/MainPage.tsx';
+import { APP_ROUTES } from '~/app/providers/AppRouters/routes.const.ts';
+import LoginPage from '~/pages/LoginPage.tsx';
+import MainPage from '~/pages/MainPage.tsx';
+import DefaultLayout from '~/shared/ui/DefaultLayout.tsx';
 
 const router = createBrowserRouter([
   {
-    id: 'root',
+    id: 'private', //@TODO тут будет проверка на авторизацию юзера
     path: APP_ROUTES.MAIN,
     Component: DefaultLayout,
     children: [

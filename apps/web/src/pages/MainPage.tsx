@@ -1,4 +1,4 @@
-import MainContainer from '~/src/entities/Main';
+import MainContainer from '~/features/Main';
 
 const MainPage = () => {
   return <MainContainer />;
