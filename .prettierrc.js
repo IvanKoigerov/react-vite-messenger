@@ -9,6 +9,6 @@ module.exports = {
   bracketSpacing: true,
   arrowParens: 'always',
   endOfLine: 'lf',
-  importOrder: ['@sut-landing', '^[~.]'],
+  importOrder: ['@messenger', '^[~.]'],
   importOrderSeparation: true,
 };
