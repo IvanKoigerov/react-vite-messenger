@@ -1,8 +1,9 @@
-import {Controller, Post, Body} from '@nestjs/common';
+import {Controller, Post, Body, Get, Res, Req} from '@nestjs/common';
 import {AuthService} from './auth.service';
-import {LoginDto} from './dto/login.dto';
-import {ApiTags} from '@nestjs/swagger';
+import {LoginDto, LoginReturnDto} from './dto/login.dto';
+import {ApiOperation, ApiResponse, ApiTags} from '@nestjs/swagger';
 import {CreateUserDto} from '~/entities/users/dto/create-user.dto';
+import {Request, Response} from 'express';
 
 @ApiTags('Авторизация')
 @Controller('auth')
@@ -10,18 +11,34 @@ export class AuthController {
   constructor(private readonly authService: AuthService) {
   }
 
+  @ApiOperation({summary: 'Авторизация'})
+  @ApiResponse({status: 200, type: LoginReturnDto})
   @Post('/login')
-  login(@Body() createAuthDto: LoginDto) {
-    return this.authService.login(createAuthDto);
+  async login(@Body() createAuthDto: LoginDto, @Res() res: Response) {
+    res.json(await this.authService.login(createAuthDto, res));
   }
 
+
+  @ApiOperation({summary: 'Регистрация'})
+  @ApiResponse({status: 200, type: LoginReturnDto})
   @Post('/registration')
-  registration(@Body() createAuthDto: CreateUserDto) {
-    return this.authService.registration(createAuthDto);
+  async registration(@Body() createAuthDto: CreateUserDto, @Res() res: Response) {
+    return res.json(await this.authService.registration(createAuthDto, res));
   }
 
-  // @Post('/logout')
-  // logout(@Body() createAuthDto: RegistrationDto) {
-  //   return this.authService.logout(createAuthDto);
-  // }
+
+  @ApiOperation({summary: 'Выход пользователя'})
+  @ApiResponse({status: 201})
+  @Post('/logout')
+  async logout(@Res() res: Response, @Req() req: Request) {
+    return res.json(await this.authService.logout(res, req));
+  }
+
+
+  @ApiOperation({summary: 'Обновление refreshToken и accessToken'})
+  @ApiResponse({status: 201})
+  @Get('/refresh')
+  async refresh(@Res() res: Response, @Req() req: Request) {
+    return res.json(await this.authService.refresh(res, req));
+  }
 }

@@ -6,7 +6,8 @@ import {User} from '~/entities/users/models/user.model';
 import {RolesModule} from '~/entities/roles/roles.module';
 import {Role} from '~/entities/roles/model/role.model';
 import {UserRoles} from '~/entities/roles/model/user_roles.model';
-import {AuthModule,AuthModule} from '~/entities/auth/auth.module';
+import {AuthModule} from '~/entities/auth/auth.module';
+import {RefreshToken} from '~/entities/auth/model/refresh-token.model';
 
 @Module({
   imports: [
@@ -20,7 +21,7 @@ import {AuthModule,AuthModule} from '~/entities/auth/auth.module';
       username: process.env.POSTGRES_USER,
       password: process.env.POSTGRES_PASSWORD,
       database: process.env.POSTGRES_DB,
-      models: [User, Role, UserRoles],
+      models: [User, Role, UserRoles, RefreshToken],
       autoLoadModels: true,
       synchronize: true,
     }),

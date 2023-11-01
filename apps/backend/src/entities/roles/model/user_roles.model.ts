@@ -11,12 +11,12 @@ export class UserRoles extends Model<UserRoles> {
   @Column
   declare id: number;
 
-  @ApiProperty({example: 'admin', description: 'Название роли'})
+  @ApiProperty({example: '1', description: 'ID роли'})
   @ForeignKey(() => Role)
   @Column
   declare roleId: string;
 
-  @ApiProperty({example: 'admin', description: 'Название роли'})
+  @ApiProperty({example: '1', description: 'ID Пользователя'})
   @ForeignKey(() => User)
   @Column
   declare userId: string;

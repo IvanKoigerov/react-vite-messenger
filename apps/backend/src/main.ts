@@ -1,5 +1,6 @@
 import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+import * as cookieParser from 'cookie-parser';
 
 import { AppModule } from './app.module';
 
@@ -7,6 +8,8 @@ const PORT = process.env.PORT || 3001;
 
 async function start() {
   const app = await NestFactory.create(AppModule);
+  app.use(cookieParser());
+  app.setGlobalPrefix('/api');
 
   const swaggerConfig = new DocumentBuilder()
     .setTitle('React Vite Messenger')
