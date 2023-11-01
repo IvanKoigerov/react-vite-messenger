@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "taxios:generate": "taxios-generate http://127.0.0.1:3001/api/docs-json -o ../../packages/frontend-shared/backend-types/MessengerApi.ts -e MessengerApi --sort-fields --named-enums --skip-validation --skip-additional-properties && prettier --write ../../packages/frontend-shared/backend-types/MessengerApi.ts"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
@@ -15,15 +16,21 @@
     "@hookform/resolvers": "^3.3.2",
     "@mantine/core": "^7.1.7",
     "@mantine/hooks": "^7.1.7",
+    "@reduxjs/toolkit": "^1.9.7",
+    "@simplesmiler/taxios": "^0.3.0-alpha.0",
+    "axios": "^1.6.0",
     "date-fns": "^2.30.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
     "react-hook-form": "^7.47.0",
+    "react-redux": "^8.1.3",
     "react-router-dom": "^6.17.0",
     "yup": "^1.3.2"
   },
   "devDependencies": {
+    "@simplesmiler/taxios-generate": "^0.3.0-alpha.0",
+    "@types/axios": "^0.14.0",
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
     "@types/react-helmet": "^6.1.8",
