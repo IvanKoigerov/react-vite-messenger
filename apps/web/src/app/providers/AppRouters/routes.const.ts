@@ -1,4 +1,5 @@
 export enum APP_ROUTES {
-  LOGIN = '/',
-  MAIN = '/main',
+  LOGIN = '/login',
+  MAIN = '/',
+  REGISTER = '/register',
 }

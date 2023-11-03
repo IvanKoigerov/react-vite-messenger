@@ -1,0 +1,3 @@
+interface LoginFormProps {
+  onSubmit: () => void;
+}

@@ -9,7 +9,7 @@ export function isAxiosError<ResponseType>(error: unknown): error is AxiosError<
 
 export const axios = Axios.create({
   // @NOTE: Put base config here
-  baseURL: '/api',
+  baseURL: process.env.BACKEND_URL,
   withCredentials: true,
 });
 

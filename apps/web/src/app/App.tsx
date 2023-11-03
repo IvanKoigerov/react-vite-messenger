@@ -3,6 +3,7 @@ import '@mantine/core/styles.css';
 
 import HeadSettings from '~/app/HeadSettings.tsx';
 import AppRouters from '~/app/providers/AppRouters';
+import '~/shared/lib/yupLocalize.ts';
 
 function App() {
   return (

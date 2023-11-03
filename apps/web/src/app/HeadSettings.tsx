@@ -1,5 +1,7 @@
 import { Helmet } from 'react-helmet';
 
+import '~/shared/lib/yupLocalize.ts';
+
 const HeadSettings = () => {
   return (
     <Helmet>
