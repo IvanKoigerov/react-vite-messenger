@@ -19,7 +19,7 @@ export class UsersService {
   }
 
   findAll(): Promise<User[]> {
-    return this.userModel.findAll({include: {all: true}});
+    return this.userModel.findAll();
   }
 
   findOne(id: number): Promise<User> {
@@ -31,7 +31,7 @@ export class UsersService {
   }
 
   findUserByEmail(email: string) {
-    return this.userModel.findOne({where: {email}, include: {all: true}});
+    return this.userModel.findOne({where: {email}});
   }
 
   async update(id: number, updateUserDto: UpdateUserDto): Promise<User> {

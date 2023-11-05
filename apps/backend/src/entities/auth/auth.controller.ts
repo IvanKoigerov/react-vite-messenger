@@ -36,8 +36,8 @@ export class AuthController {
 
 
   @ApiOperation({summary: 'Обновление refreshToken и accessToken'})
-  @ApiResponse({status: 201})
-  @Get('/refresh')
+  @ApiResponse({status: 200, type: LoginReturnDto})
+  @Post('/refresh')
   async refresh(@Res() res: Response, @Req() req: Request) {
     return res.json(await this.authService.refresh(res, req));
   }

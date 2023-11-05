@@ -1,10 +1,12 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import { Button } from '@mantine/core';
 import { FormProvider, useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { object, string } from 'yup';
 
 import { APP_ROUTES } from '~/app/providers/AppRouters/routes.const.ts';
+import { extraAuthAction } from '~/entities/auth';
+import { useAppDispatch } from '~/shared/hooks/redux.ts';
 import FormPasswordField from '~/shared/ui/form/FormPasswordField.tsx';
 import FormTextField from '~/shared/ui/form/FormTextField.tsx';
 
@@ -15,19 +17,18 @@ const registerSchema = object().shape({
 });
 
 const RegisterForm = () => {
+  const navigate = useNavigate();
+  const dispatch = useAppDispatch();
+
   const form = useForm({
     resolver: yupResolver(registerSchema),
   });
-  const { handleSubmit, watch } = form;
+  const { handleSubmit } = form;
 
-  const onSubmit = handleSubmit(
-    (formValue) => {
-      console.log(formValue);
-    },
-    (formValue) => {
-      console.log(formValue);
-    },
-  );
+  const onSubmit = handleSubmit((formValue) => {
+    console.log(formValue);
+    dispatch(extraAuthAction.register({ ...formValue, callback: () => navigate(APP_ROUTES.MAIN) }));
+  });
 
   return (
     <FormProvider {...form}>

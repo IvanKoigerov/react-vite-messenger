@@ -64,6 +64,16 @@ export namespace MessengerApi {
      */
     password: string;
   }
+  export interface UserWithoutPasswordDto {
+    /**
+     * Email пользователя
+     */
+    email: string;
+    /**
+     * Имя пользователя
+     */
+    name: string;
+  }
   export interface LoginReturnDto {
     /**
      * Access Token
@@ -73,6 +83,10 @@ export namespace MessengerApi {
      * Refresh Token
      */
     refreshToken: string;
+    /**
+     * Access Token
+     */
+    user: MessengerApi.UserWithoutPasswordDto;
   }
 }
 
@@ -153,7 +167,9 @@ export interface MessengerApi {
       POST: {};
     };
     '/api/auth/refresh': {
-      GET: {};
+      POST: {
+        response: MessengerApi.LoginReturnDto;
+      };
     };
   };
 }

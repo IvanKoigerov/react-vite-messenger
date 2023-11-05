@@ -8,6 +8,7 @@ import {CreateUserDto} from '~/entities/users/dto/create-user.dto';
 import {InjectModel} from '@nestjs/sequelize';
 import {RefreshToken} from '~/entities/auth/model/refresh-token.model';
 import {Request, Response} from 'express';
+import {omit} from 'lodash';
 
 @Injectable()
 export class AuthService {
@@ -20,7 +21,11 @@ export class AuthService {
 
   async login(loginDto: LoginDto, res: Response) {
     const user = await this.usersService.findUserByEmail(loginDto.email);
-    const passwordEquals = await compare(loginDto.password, user?.password);
+
+    if (!loginDto.password && !user.password) throw new UnauthorizedException('Нет такого пользователя или неправильный пароль');
+
+    const passwordEquals = await compare(loginDto.password, user.password);
+
     if (!user || !passwordEquals) throw new UnauthorizedException('Нет такого пользователя или неправильный пароль');
 
     return this.generateTokens(user, res);
@@ -65,6 +70,7 @@ export class AuthService {
         roles: user?.roles,
       }),
       refreshToken,
+      user: omit(user.dataValues, 'password'),
     };
   }
 

@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 import { object, string } from 'yup';
 
 import { APP_ROUTES } from '~/app/providers/AppRouters/routes.const.ts';
+import { extraAuthAction } from '~/entities/auth';
+import { useAppDispatch } from '~/shared/hooks/redux.ts';
 import FormPasswordField from '~/shared/ui/form/FormPasswordField.tsx';
 import FormTextField from '~/shared/ui/form/FormTextField.tsx';
 
@@ -14,20 +16,17 @@ const loginSchema = object().shape({
 });
 
 const LoginForm = () => {
+  const dispatch = useAppDispatch();
+
   const form = useForm({
     resolver: yupResolver(loginSchema),
   });
 
   const { handleSubmit } = form;
 
-  const onSubmit = handleSubmit(
-    (formValue) => {
-      console.log(formValue);
-    },
-    (formValue) => {
-      console.log(formValue);
-    },
-  );
+  const onSubmit = handleSubmit((formValue) => {
+    dispatch(extraAuthAction.login({ ...formValue }));
+  });
 
   return (
     <FormProvider {...form}>
@@ -36,7 +35,7 @@ const LoginForm = () => {
       <Button variant="filled" h={48} onClick={onSubmit}>
         Войти
       </Button>
-      <Link to={APP_ROUTES.REGISTER}>Регистрация</Link>
+      <Link to={APP_ROUTES.MAIN}>Регистрация</Link>
     </FormProvider>
   );
 };

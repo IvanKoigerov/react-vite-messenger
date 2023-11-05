@@ -10,6 +10,10 @@ async function start() {
   const app = await NestFactory.create(AppModule);
   app.use(cookieParser());
   app.setGlobalPrefix('/api');
+  app.enableCors({
+    origin: ['http://localhost:3000'],
+    credentials: true,
+  });
 
   const swaggerConfig = new DocumentBuilder()
     .setTitle('React Vite Messenger')
