@@ -1,10 +1,10 @@
-import {forwardRef, Module} from '@nestjs/common';
-import {AuthService} from './auth.service';
-import {AuthController} from './auth.controller';
-import {UsersModule} from '~/entities/users/users.module';
-import {JwtModule} from '@nestjs/jwt';
-import {SequelizeModule} from '@nestjs/sequelize';
-import {RefreshToken} from '~/entities/auth/model/refresh-token.model';
+import { forwardRef, Module } from '@nestjs/common';
+import { AuthService } from './auth.service';
+import { AuthController } from './auth.controller';
+import { UsersModule } from '~/entities/users/users.module';
+import { JwtModule } from '@nestjs/jwt';
+import { SequelizeModule } from '@nestjs/sequelize';
+import { RefreshToken } from '~/entities/auth/model/refresh-token.model';
 
 @Module({
   controllers: [AuthController],

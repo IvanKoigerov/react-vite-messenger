@@ -1,7 +1,7 @@
-import {AutoIncrement, BelongsToMany, Column, Model, PrimaryKey, Table, Unique} from 'sequelize-typescript';
-import {ApiProperty} from '@nestjs/swagger';
-import {Role} from '~/entities/roles/model/role.model';
-import {UserRoles} from '~/entities/roles/model/user_roles.model';
+import { AutoIncrement, BelongsToMany, Column, Model, PrimaryKey, Table, Unique } from 'sequelize-typescript';
+import { ApiProperty } from '@nestjs/swagger';
+import { Role } from '~/entities/roles/model/role.model';
+import { UserRoles } from '~/entities/roles/model/user_roles.model';
 
 interface UserModalAttr {
   email: string;

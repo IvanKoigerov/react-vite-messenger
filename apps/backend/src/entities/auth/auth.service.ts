@@ -1,14 +1,14 @@
-import {HttpException, HttpStatus, Injectable, UnauthorizedException} from '@nestjs/common';
-import {LoginDto} from './dto/login.dto';
-import {UsersService} from '~/entities/users/users.service';
-import {JwtService} from '@nestjs/jwt';
-import {compare, hash} from 'bcryptjs';
-import {User} from '~/entities/users/models/user.model';
-import {CreateUserDto} from '~/entities/users/dto/create-user.dto';
-import {InjectModel} from '@nestjs/sequelize';
-import {RefreshToken} from '~/entities/auth/model/refresh-token.model';
-import {Request, Response} from 'express';
-import {omit} from 'lodash';
+import { HttpException, HttpStatus, Injectable, UnauthorizedException } from '@nestjs/common';
+import { LoginDto } from './dto/login.dto';
+import { UsersService } from '~/entities/users/users.service';
+import { JwtService } from '@nestjs/jwt';
+import { compare, hash } from 'bcryptjs';
+import { User } from '~/entities/users/models/user.model';
+import { CreateUserDto } from '~/entities/users/dto/create-user.dto';
+import { InjectModel } from '@nestjs/sequelize';
+import { RefreshToken } from '~/entities/auth/model/refresh-token.model';
+import { Request, Response } from 'express';
+import { omit } from 'lodash';
 
 @Injectable()
 export class AuthService {

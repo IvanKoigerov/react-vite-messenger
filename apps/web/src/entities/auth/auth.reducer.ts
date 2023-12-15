@@ -8,13 +8,11 @@ import { setReduxErrorInState, setReduxIsLoadingInState } from '~/shared/helper/
 const { refresh, register, logout, login } = extraAuthAction;
 
 const setAuthState = (state: AuthStore, action: PayloadAction<AuthType>) => {
-  console.log(action.type);
-
   state.isLoading = false;
   state.error = null;
-  state.accessToken = action.payload.accessToken;
-  state.refreshToken = action.payload.refreshToken;
-  state.user = action.payload.user;
+  state.accessToken = action.payload?.accessToken;
+  state.refreshToken = action.payload?.refreshToken;
+  state.user = action.payload?.user;
   state.isAuth = true;
 };
 

@@ -1,5 +1,5 @@
-import {Table, Column, Model, PrimaryKey, AutoIncrement, ForeignKey} from 'sequelize-typescript';
-import {ApiProperty} from '@nestjs/swagger';
+import { Table, Column, Model, PrimaryKey, AutoIncrement, ForeignKey } from 'sequelize-typescript';
+import { ApiProperty } from '@nestjs/swagger';
 
 @Table({tableName: 'refresh_tokens', underscored: true})
 export class RefreshToken extends Model<RefreshToken> {

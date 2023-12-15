@@ -1,6 +1,6 @@
-import {ApiProperty} from '@nestjs/swagger';
-import {IsEmail, IsObject, IsString, Length} from 'class-validator';
-import {UserWithoutPasswordDto} from '~/entities/users/dto/user-without-password.dto';
+import { ApiProperty } from '@nestjs/swagger';
+import { IsEmail, IsObject, IsString, Length } from 'class-validator';
+import { UserWithoutPasswordDto } from '~/entities/users/dto/user-without-password.dto';
 
 export class LoginDto {
   @ApiProperty({example: 'user@mail.ru', description: 'Email пользователя'})
